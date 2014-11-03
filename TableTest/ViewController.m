@@ -108,7 +108,7 @@ static NSString *ViewControllerCellIdentifier = @"ViewControllerCellIdentifier";
     switch (indexPath.section)
     {
         case ViewControllerSectionMerchandise:
-            height = 170;
+            height = 44 + arc4random() % 170;
             break;
         case ViewControllerSectionInStore:
         {
@@ -133,8 +133,12 @@ static NSString *ViewControllerCellIdentifier = @"ViewControllerCellIdentifier";
 
 - (void)refreshTick
 {
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
+//    [self.tableView beginUpdates];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:ViewControllerSectionMerchandise];
+//    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    [self.tableView endUpdates];
+    [self.tableView reloadData];
+
 }
 
 - (void)reloadTick
